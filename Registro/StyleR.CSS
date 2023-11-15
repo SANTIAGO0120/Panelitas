@@ -1,0 +1,191 @@
+/* Estilos globales para resetear márgenes, rellenos y estilos de lista */
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    max-width: 100%;
+    /* Asegura que los elementos no se desborden */
+}
+
+/* Fuente global para el cuerpo del sitio */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-image: url("img/Fondo.jpg");
+    background-repeat: repeat-y;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Estilos para el encabezado */
+.header {
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+}
+
+.blur {
+    filter: blur(5px);
+}
+
+/* Estilos para la barra de navegación */
+.navbar {
+    position: absolute;
+    top: 2%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 85%;
+    margin: 2em auto;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.3);
+    /* Agrega el efecto de vidrio */
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 10px;
+}
+
+.navbar a {
+    color: rgb(250, 250, 250);
+}
+
+/* Estilos para la lista de navegación en la barra */
+.navbar .nav-links ul {
+    display: flex;
+}
+
+.navbar .nav-links ul li {
+    margin: 0 1.5em;
+}
+
+.navbar .nav-links ul li.active a {
+    color: rgb(213, 41, 107);
+    font-weight: 400;
+}
+
+.glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 20px;
+    color: white;
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    width: 80%; /* Ajusta el ancho para pantallas más pequeñas */
+    margin-top: 5%; /* Ajusta el margen superior para pantallas más pequeñas */
+}
+
+.glass .row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.glass .row div {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.glass .row div:last-child {
+    margin-right: 0;
+}
+
+.glass input,
+.glass select {
+    border: none;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    color: rgb(10, 10, 10);
+    outline: none;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.glass input::after,
+.glass select::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.glass input[type="submit"] {
+    cursor: pointer;
+    background: purple;
+    border-radius: 5px;
+}
+
+@media screen and (max-width: 600px) {
+    .glass {
+        width: 90%; /* Ajusta el ancho para pantallas aún más pequeñas */
+        margin-top: 21%; /* Ajusta el margen superior para pantallas aún más pequeñas */
+    }
+}
+
+@media screen and (max-width: 900px) {
+
+    .navbar .menu-hamburger {
+        display: block;
+        /* Muestra el ícono del menú */
+        z-index: 1;
+    }
+
+    .nav-links {
+        top: 0;
+        left: 0;
+        position: absolute;
+        background-color: rgba(248, 238, 238, 0.1);
+        backdrop-filter: blur(30px);
+        /* Agrega el efecto de vidrio */
+        top: 109%;
+        width: 120%;
+        height: 85vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-left: -200%;
+        transition: all 0.5s ease;
+        z-index: 3;
+    }
+
+    .nav-links.mobile-menu {
+        margin-left: 0;
+    }
+
+    .navbar {
+        padding: 1em; /* Ajusta el padding para pantallas más pequeñas */
+        width: 90%; /* Ajusta el ancho para pantallas más pequeñas */
+    }
+
+    .navbar a {
+        font-size: 0.9em; /* Ajusta el tamaño de fuente para pantallas más pequeñas */
+    }
+
+    .navbar .nav-links ul {
+        flex-direction: column; /* Cambia la dirección de la lista para pantallas más pequeñas */
+        align-items: flex-start; /* Alinea los elementos a la izquierda para pantallas más pequeñas */
+    }
+
+    .navbar .nav-links ul li {
+        margin: 0.8em 0; /* Ajusta el margen para pantallas más pequeñas */
+        font-size: 1em; /* Ajusta el tamaño de fuente para pantallas más pequeñas */
+    }
+
+}

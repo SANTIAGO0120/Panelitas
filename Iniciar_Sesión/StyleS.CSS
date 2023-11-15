@@ -1,0 +1,188 @@
+/* Estilos globales para resetear márgenes, rellenos y estilos de lista */
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    max-width: 100%;
+    /* Asegura que los elementos no se desborden */
+}
+
+/* Fuente global para el cuerpo del sitio */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-image: url("img/Fondo.jpg");
+    background-repeat: repeat-y;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilos para el encabezado */
+.header {
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+}
+
+.blur {
+    filter: blur(5px);
+}
+
+/* Estilos para la barra de navegación */
+.navbar {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 85%;
+    margin: 2em auto;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.8);
+    /* Agrega el efecto de vidrio */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+}
+
+.navbar a {
+    color: rgb(10, 10, 10);
+    font-family: 'Brush Script MT', cursive;
+    /* Cambia la fuente a Brush Script MT */
+    font-style: italic;
+    letter-spacing: 10px;
+}
+
+/* Estilos para la lista de navegación en la barra */
+.navbar .nav-links ul {
+    display: flex;
+}
+
+.navbar .nav-links ul li {
+    margin: 0 1.5em;
+}
+
+.navbar .nav-links ul li.active a {
+    color: rgb(213, 41, 107);
+    font-weight: 400;
+}
+
+/* Estilos para el icono de menú desplegable */
+.navbar .menu-hamburger {
+    display: none;
+    /* Oculta el ícono del menú en pantallas grandes */
+    top: 3em;
+    right: 1em;
+    width: 2em;
+    z-index: 3;
+}
+
+.caja {
+    width: 80%; /* Utilizamos porcentajes para adaptarse al ancho del contenedor principal */
+    max-width: 400px; /* Establecemos un ancho máximo para evitar que la caja sea demasiado grande en pantallas grandes */
+    margin: 0 auto; /* Centramos la caja horizontalmente */
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.caja h3 {
+    margin-bottom: 30px;
+}
+
+.caja .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.caja .form-group label {
+    margin-bottom: 5px;
+}
+
+.caja .form-group input {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+
+.caja .form-group input[type="submit"] {
+    background: purple;
+    color: white;
+    cursor: pointer;
+}
+
+/* Agregamos una regla para ajustar el desenfoque solo en pantallas más grandes */
+@media screen and (min-width: 600px) {
+    .caja {
+        backdrop-filter: blur(10px);
+    }
+}
+
+/* Restauramos el desenfoque a 0 en pantallas más pequeñas */
+@media screen and (max-width: 599px) {
+    .caja {
+        backdrop-filter: blur(0);
+    }
+}
+
+@media screen and (max-width: 900px) {
+
+    .navbar .menu-hamburger {
+        display: block;
+        /* Muestra el ícono del menú */
+        z-index: 1;
+    }
+
+    .nav-links {
+        top: 0;
+        left: 0;
+        position: absolute;
+        background-color: rgba(248, 238, 238, 0.1);
+        backdrop-filter: blur(30px);
+        /* Agrega el efecto de vidrio */
+        top: 109%;
+        width: 120%;
+        height: 85vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-left: -200%;
+        transition: all 0.5s ease;
+        z-index: 3;
+    }
+
+    .nav-links.mobile-menu {
+        margin-left: 0;
+    }
+
+    .nav-links ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar .nav-links ul li {
+        margin: 1.5em 0;
+        font-size: 1.2em;
+    }
+
+}

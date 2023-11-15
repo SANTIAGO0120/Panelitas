@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DULCERIA DE LECHE</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <a href="#" class="logo">DULCERIA</a>
+        <div class="nav-links">
+            <ul>
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">Quienes somos</a></li>
+                <li><a href="/Iniciar_Sesión/Sesión.HTML">Iniciar sesión</a></li>
+                <li><a href="/Registro/Registro.HTML">Registrarse</a></li>
+            </ul>
+        </div>
+        <img src="img/menu.png" alt="menu hamburger" class="menu-hamburger">
+    </nav>
+    <div class="info-container">
+        <div class="info">
+            <img src="img/dulce.jpg" alt="Descripción de la imagen">
+            <p class="price">Precio del producto</p>
+            <div class="button-container">
+                <select class="quantity">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <!-- Agrega más opciones según sea necesario -->
+                </select>
+                <button class="add-to-cart">Añadir al carrito</button>
+            </div>
+        </div>
+        <div class="info1">
+            <img src="img/dulce.jpg" alt="Descripción de la imagen">
+            <p class="price">Precio del producto</p>
+            <div class="button-container">
+                <select class="quantity">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <!-- Agrega más opciones según sea necesario -->
+                </select>
+                <button class="add-to-cart">Añadir al carrito</button>
+            </div>
+        </div>
+        <div class="info2">
+            <img src="img/dulce.jpg" alt="Descripción de la imagen">
+            <p class="price">Precio del producto</p>
+            <div class="button-container">
+                <select class="quantity">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <!-- Agrega más opciones según sea necesario -->
+                </select>
+                <button class="add-to-cart">Añadir al carrito</button>
+            </div>
+        </div>
+    </div>
+
+    
+</body>
+
+<script>
+    const menuHamburger = document.querySelector(".menu-hamburger");
+    const navLinks = document.querySelector(".nav-links");
+    const info = document.querySelector(".info");
+    const info1 = document.querySelector(".info1");
+    const info2 = document.querySelector(".info2");
+
+    menuHamburger.addEventListener("click", () => {
+        navLinks.classList.toggle("mobile-menu");
+        if (window.innerWidth <= 900) { // Asegura que solo se aplique en pantallas pequeñas
+            info.classList.toggle("blur");
+            info1.classList.toggle("blur");
+            info2.classList.toggle("blur");
+        }
+    });
+</script>
+
+</html>

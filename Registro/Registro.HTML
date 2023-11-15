@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+</html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="StyleR.CSS">
+</head>
+
+<body>
+    <nav class="navbar">
+        <a href="/index/Index.HTML" class="logo">Registro De Usuario</a>
+    </nav>
+    <div class="glass">
+        <form action="#" th:action="@{/register}" method="post" th:object="${user}">
+            <div class="row">
+                <div>
+                    <label>Nombre:</label>
+                    <input type="text" th:field="*{firstName}" required />
+                </div>
+                <div>
+                    <label>Primer Apellido:</label>
+                    <input type="text" th:field="*{lastName1}" required />
+                </div>
+                <div>
+                    <label>Segundo Apellido:</label>
+                    <input type="text" th:field="*{lastName2}" required />
+                </div>
+            </div>
+            <div class="row">
+                <div>
+                    <label>Cédula:</label>
+                    <input type="number" th:field="*{cedula}" required />
+                </div>
+                <div>
+                    <label>NIT:</label>
+                    <input type="text" th:field="*{nit}" required pattern="\d{4}-\d{6}-\d{3}-\d{1}" title="Ingrese un NIT válido (XXXX-XXXXXX-XXX-X)" />
+                </div>
+                <div>
+                    <label>Celular:</label>
+                    <input type="number" th:field="*{cellphone}" required minlength="10" maxlength="10" />
+                </div>
+            </div>
+            <div class="row">
+                <div>
+                    <label>Correo:</label>
+                    <input type="email" th:field="*{email}" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" title="Ingrese una dirección de correo electrónico válida"/>
+                </div>
+                <div>
+                    <label>Confirmación de Correo:</label>
+                    <input type="email" th:field="*{confirmEmail}" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" title="Ingrese una dirección de correo electrónico válida"/>
+                </div>
+            </div>
+            <label>Contraseña:</label>
+            <input type="password" th:field="*{password}" required />
+            <label>Género Biológico:</label>
+            <select th:field="*{gender}" required>
+                <option value="S">Selección</option>
+                <option value="M">Masculino</option>
+                <option value="F">Femenino</option>
+                <option value="T">36 tipos de gay</option>
+            </select>
+            <br />
+            <input type="submit" value="Registrar" />
+        </form>
+    </div>
+</body>
+
+</html>
