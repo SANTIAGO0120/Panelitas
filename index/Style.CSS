@@ -42,10 +42,10 @@ body {
     width: 85%;
     margin: 2em auto;
     z-index: 2;
-    background: rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.555);
     /* Agrega el efecto de vidrio */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.226);
     border-radius: 10px;
 }
 
@@ -93,10 +93,10 @@ body {
 .info-container .info,
 .info-container .info1,
 .info-container .info2 {
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.555);
     backdrop-filter: blur(7px);
-    width: 18em;
-    height: 18em;
+    width: 15em;
+    height: 15em;
     padding: .75em;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 1.9);
@@ -106,10 +106,9 @@ body {
     margin: 0.625em;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    margin-bottom: 1.25em;
-    /* Aumenta el margen inferior para separar los elementos */
+    
 }
 
 .info-container .info img,
@@ -118,92 +117,20 @@ body {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    max-height: 18em;
-    /* Ajusta según sea necesario */
+
 }
 
 .info-container .info .price,
 .info-container .info1 .price,
 .info-container .info2 .price {
-    margin-top: 1em;
-    /* Ajusta este valor según sea necesario para separar del contenido superior */
-}
-
-/* Contenedor para el selector de cantidad y el botón */
-.action-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    /* Alinea los elementos en la parte superior del contenedor */
-}
-
-.info-container .info .button-container,
-.info-container .info1 .button-container,
-.info-container .info2 .button-container {
-    position: relative;
-    top: 0;
-    /* Ajusta este valor para mover el contenedor hacia abajo */
-    display: inline-flex;
-    width: 100%;
-}
-
-.info-container .info .quantity {
-    text-align: left;
-}
-
-.info-container .info .button-container,
-.info-container .info1 .button-container,
-.info-container .info2 .button-container {
-    position: relative;
-    top: -10px;
-    /* Ajusta este valor para mover el contenedor hacia abajo */
-    margin-left: 0;
-    /* Elimina el margen izquierdo para alinear con el selector de cantidad */
-}
-
-.info-container .info button,
-.info-container .info1 button,
-.info-container .info2 button {
-    background-color: #34db7456;
-    /* Color de fondo del botón */
-    color: white;
-    /* Color del texto del botón */
-    border: none;
-    /* Remueve el borde */
-    padding: 9px 3px;
-    /* Espaciado interno del botón */
-    text-align: center;
-    /* Alinea el texto al centro */
-    text-decoration: none;
-    /* Remueve el subrayado del texto */
-    display: flex;
-    justify-content: space-between;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    /* Cambia el cursor al pasar el mouse sobre el botón */
-    border-radius: 5px;
-    /* Esquinas redondeadas del botón */
-    transition-duration: 0.4s;
-    /* Duración de la transición */
-    margin-left: 3em;
-    align-self: flex-end;
-    margin-left: 0;
-    /* Elimina el margen izquierdo para alinear con el selector de cantidad */
-}
-
-.info-container .info button:hover,
-.info-container .info1 button:hover,
-.info-container .info2 button:hover {
-    background-color: #45a049;
-    /* Color de fondo del botón cuando se pasa el mouse sobre él */
-    color: white;
-    /* Color del texto del botón cuando se pasa el mouse sobre él */
+    color: #333;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .quantity {
     font-size: 16px;
-    padding: 10px;
+    padding: 9px;
     border: none;
     border-radius: 4px;
     background-color: #3498db;
@@ -212,16 +139,10 @@ body {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    margin-right: 9em;
     background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="black" viewBox="0 0 32 32"><path d="M16 22L6 9h20l-10 13z"/></svg>') no-repeat;
     background-position: right 10px top 50%;
-    padding-right: 30px;
-    /* Espacio para la flecha */
-    position: relative;
-    top: 10px;
-    align-self: flex-start;
-    margin-right: 0;
-    /* Elimina el margen derecho para alinear con los botones */
+    padding-right: 30px; /* Espacio para la flecha */
+    cursor: pointer;
 }
 
 .quantity::-ms-expand {
@@ -233,10 +154,28 @@ body {
     background-color: #45a049;
 }
 
-.add-to-cart {
-    /* Aquí está tu código existente... */
-    /* Asegúrate de que el botón se alinee a la derecha */
-    align-self: flex-end;
+.info-container .info button,
+.info-container .info1 button,
+.info-container .info2 button {
+    background-color: #f4f8f600; /* Color de fondo del botón */
+    color: white; /* Color del texto del botón */
+    border: none; /* Remueve el borde */
+    padding: 9px 3px; /* Espaciado interno del botón */
+    text-align: center; /* Alinea el texto al centro */
+    text-decoration: none; /* Remueve el subrayado del texto */
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer; /* Cambia el cursor al pasar el mouse sobre el botón */
+    border-radius: 5px; /* Esquinas redondeadas del botón */
+    transition-duration: 0.4s; /* Duración de la transición */
+}
+
+.info-container .info button:hover,
+.info-container .info1 button:hover,
+.info-container .info2 button:hover {
+    background-color: #45a049; /* Color de fondo del botón cuando se pasa el mouse sobre él */
+    color: white; /* Color del texto del botón cuando se pasa el mouse sobre él */
 }
 
 /* Estilos para hacer el menú responsive en pantallas más pequeñas */
@@ -252,7 +191,7 @@ body {
         top: 0;
         left: 0;
         position: absolute;
-        background-color: rgba(248, 238, 238, 0.1);
+        background-color: rgba(248, 238, 238, 0.555);
         backdrop-filter: blur(30px);
         /* Agrega el efecto de vidrio */
         top: 109%;
