@@ -151,7 +151,7 @@ body {
 
 .quantity:hover,
 .quantity:focus {
-    background-color: #45a049;
+    background-color: purple;;
 }
 
 .info-container .info button,
@@ -174,7 +174,7 @@ body {
 .info-container .info button:hover,
 .info-container .info1 button:hover,
 .info-container .info2 button:hover {
-    background-color: #45a049; /* Color de fondo del botón cuando se pasa el mouse sobre él */
+    background-color: purple; /* Color de fondo del botón cuando se pasa el mouse sobre él */
     color: white; /* Color del texto del botón cuando se pasa el mouse sobre él */
 }
 

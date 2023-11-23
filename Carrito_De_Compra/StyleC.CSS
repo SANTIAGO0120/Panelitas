@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    max-width: 100%;
+    /* Asegura que los elementos no se desborden */
+}
+
+/* Fuente global para el cuerpo del sitio */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-image: url("img/Fondo.jpg");
+    background-repeat: repeat-y;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Estilo para el contenedor del carrito */
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+
+/* Estilo para la imagen del producto */
+.cart-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+/* Estilo para el nombre y el precio del producto */
+.cart-item p {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+}
+
+/* Estilo para el botón de eliminar del carrito */
+.remove-from-cart {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.remove-from-cart:hover {
+    background-color: #f32121;
+}
+
+/* Estilo para el total del carrito */
+.total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Estilo para el botón de proceder al pago */
+.checkout {
+    background-color: purple;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+.checkout:hover {
+    background-color: #45a049;
+}

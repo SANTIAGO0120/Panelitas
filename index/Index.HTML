@@ -14,7 +14,7 @@
         <div class="nav-links">
             <ul>
                 <li class="active"><a href="#">Home</a></li>
-                <li><a href="#">Quienes somos</a></li>
+                <li><a href="/Carrito_De_Compra/Carrito_de_compra.HTML">Carrito</a></li>
                 <li><a href="/Iniciar_Sesión/Sesión.HTML">Iniciar sesión</a></li>
                 <li><a href="/Registro/Registro.HTML">Registrarse</a></li>
             </ul>
@@ -62,24 +62,49 @@
             </div>
         </div>
     </div>
-
-    
 </body>
 
-<script>
+<script th:inline="javascript">
     const menuHamburger = document.querySelector(".menu-hamburger");
     const navLinks = document.querySelector(".nav-links");
-    const info = document.querySelector(".info");
-    const info1 = document.querySelector(".info1");
-    const info2 = document.querySelector(".info2");
 
     menuHamburger.addEventListener("click", () => {
         navLinks.classList.toggle("mobile-menu");
-        if (window.innerWidth <= 900) { // Asegura que solo se aplique en pantallas pequeñas
-            info.classList.toggle("blur");
-            info1.classList.toggle("blur");
-            info2.classList.toggle("blur");
+        if (window.innerWidth <= 900) {
+            document.querySelectorAll(".info, .info1, .info2").forEach(info => {
+                info.classList.toggle("blur");
+            });
         }
+    });
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const addToCartButtons = document.querySelectorAll(".add-to-cart");
+
+        addToCartButtons.forEach(button => {
+            button.addEventListener("click", () => {
+                const quantitySelect = button.previousElementSibling;
+                const quantity = quantitySelect.options[quantitySelect.selectedIndex].value;
+
+                const productDiv = button.parentElement.parentElement;
+                const productName = productDiv.querySelector("p").innerText;
+                const productPrice = productDiv.querySelector(".price").innerText;
+
+                const product = {
+                    name: productName,
+                    price: productPrice,
+                    quantity: quantity
+                };
+
+                let cart = JSON.parse(localStorage.getItem("cart")) || [];
+                cart.push(product);
+                localStorage.setItem("cart", JSON.stringify(cart));
+
+                // Recarga la página para reflejar los cambios en el carrito de compra
+                location.reload();
+            });
+        });
     });
 </script>
 

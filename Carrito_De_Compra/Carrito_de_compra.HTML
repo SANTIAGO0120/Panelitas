@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Carrito de Compras</title>
+    <link rel="stylesheet" href="StyleC.CSS">
+</head>
+
+<body>
+    <div id="cart">
+        <!-- Aquí se agregarán los productos del carrito dinámicamente -->
+    </div>
+
+    <div class="total">
+        <p>Total:</p>
+        <p id="totalAmount">$Total</p>
+    </div>
+
+    <button class="checkout">Proceder al pago</button>
+
+    <script>
+        function removeFromCart(itemId) {
+            var cartItem = document.getElementById("cart-item-" + itemId);
+            cartItem.remove();
+
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            cart = cart.filter(item => item.id !== itemId);
+            localStorage.setItem("cart", JSON.stringify(cart));
+
+            updateTotal();
+        }
+
+        function updateTotal() {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            let total = 0;
+
+            cart.forEach(product => {
+                const productQuantity = Number(product.quantity);
+                const productPrice = Number(product.price);
+
+                if (!isNaN(productQuantity) && !isNaN(productPrice)) {
+                    total += productPrice * productQuantity;
+                }
+            });
+
+            document.getElementById("totalAmount").innerText = "$" + total.toFixed(2);
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            const cartDiv = document.getElementById("cart");
+
+            cart.forEach(product => {
+                const productDiv = document.createElement("div");
+                productDiv.className = "cart-item";
+                productDiv.id = "cart-item-" + product.id;
+                productDiv.innerHTML = `
+                    <img src="${'img/dulce.jpg'}" alt="Imagen del producto">
+                    <p>${product.name}</p>
+                    <p class="price">${'$' + product.price}</p>
+                    <div class="quantity-container">
+                        <p>Cantidad: <span id="quantity-${product.id}">${product.quantity}</span></p>
+                    </div>
+                    <button class="remove-from-cart" onclick="removeFromCart(${product.id})">Eliminar del carrito</button>
+                    <p class="total-product">${'$' + (product.price * product.quantity)}</p>
+                `;
+                cartDiv.appendChild(productDiv);
+            });
+
+            updateTotal();
+        });
+    </script>
+
+</body>
+
+</html>
